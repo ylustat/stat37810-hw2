@@ -1,4 +1,3 @@
-```
 investment_value<-function(x,y,z=0.95, different_years=c(3,5)){
   # Computes the value of an investment x after 10 years,
   # if there is an annual growth rate of y. Except that in 
@@ -9,7 +8,12 @@ investment_value<-function(x,y,z=0.95, different_years=c(3,5)){
   for(i in 1:10){
     i=i+1
     if (!(i %in% different_years)){      # should be true unless i is in the different_years vector
-      x<-beginning_x*multiplier
+      if (i == 2) {
+        x <- beginning_x*multiplier
+      } else {
+        x <- x*multiplier
+      }
+      
     } else {
       # In the different years we had a recession
       x<-x*.96
@@ -17,4 +21,3 @@ investment_value<-function(x,y,z=0.95, different_years=c(3,5)){
   }
   return(x)
 }
-```
