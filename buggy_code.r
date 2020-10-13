@@ -1,4 +1,4 @@
-investment_value<-function(x,y,z=0, different_years=c(3,5)){
+investment_value<-function(x,y,z=0,different_years=c(3,5)){
   # Computes the value of an investment x after 10 years,
   # if there is an annual growth rate of y. Except that in 
   # years 3 and 5, there is a different growth rate of z.
